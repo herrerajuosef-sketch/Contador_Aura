@@ -21,16 +21,19 @@ powerButton.addEventListener("click", () => {
 
 incButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    incButtons.forEach(b => b.classList.remove("selected"));
-    btn.classList.add("selected");
-    increment = parseInt(btn.getAttribute(\"data-inc\"));
+    if (!btn.classList.contains("reset-btn")) {
+      incButtons.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      increment = parseInt(btn.getAttribute("data-inc"));
+    }
   });
 });
 
 const resetButton = document.getElementById("resetButton");
 const resetWrapper = document.querySelector(".reset-wrapper");
 
-resetButton.addEventListener("click", () => {
+resetButton.addEventListener("click", (e) => {
+  e.stopPropagation();
   count = 0; 
   counter.textContent = count; 
 

@@ -209,6 +209,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   animation: pulse-rojo 1.2s ease-out forwards; 
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes pulse-rojo {
