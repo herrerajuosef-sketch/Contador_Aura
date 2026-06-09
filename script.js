@@ -23,19 +23,22 @@ incButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     incButtons.forEach(b => b.classList.remove("selected"));
     btn.classList.add("selected");
-    increment = parseInt(btn.getAttribute("data-inc"));
+    increment = parseInt(btn.getAttribute(\"data-inc\"));
   });
 });
 
 const resetButton = document.getElementById("resetButton");
-const incrementsContainer = document.querySelector(".increments");
+const resetWrapper = document.querySelector(".reset-wrapper");
 
 resetButton.addEventListener("click", () => {
   count = 0; 
   counter.textContent = count; 
+
   const auraRoja = document.createElement("span");
   auraRoja.classList.add("aura-roja");
-  incrementsContainer.appendChild(auraRoja);
+  
+  resetWrapper.appendChild(auraRoja);
+
   setTimeout(() => {
     auraRoja.remove();
   }, 1200);
