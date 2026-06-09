@@ -26,3 +26,17 @@ incButtons.forEach(btn => {
     increment = parseInt(btn.getAttribute("data-inc"));
   });
 });
+
+const resetButton = document.getElementById("resetButton");
+const incrementsContainer = document.querySelector(".increments");
+
+resetButton.addEventListener("click", () => {
+  count = 0; 
+  counter.textContent = count; 
+  const auraRoja = document.createElement("span");
+  auraRoja.classList.add("aura-roja");
+  incrementsContainer.appendChild(auraRoja);
+  setTimeout(() => {
+    auraRoja.remove();
+  }, 1200);
+});
